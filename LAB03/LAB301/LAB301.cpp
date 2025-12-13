@@ -1,20 +1,27 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-int main(void) {
-    int a, b;
+// Call by Value
+void swap(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
 
-    printf("Enter A: ");
-    scanf("%d", &a);
+    // แสดงค่าในฟังก์ชัน
+    cout << "Inside function (after swap):" << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+}
 
-    printf("Enter B: ");
-    scanf("%d", &b);
+int main() {
+    int a = 10, b = 20;
 
-    printf("A + B = %d\n", a + b);
-    printf("A - B = %d\n", a - b);
-    printf("A * B = %d\n", a * b);
-    printf("A / B = %d\n", a / b);   // หารจำนวนเต็ม
-    printf("A %% B = %d\n", a % b);  // %% เพื่อพิมพ์เครื่องหมาย %
+    cout << "Before swap:" << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    swap(a, b);   // ส่งค่าแบบ copy (Call by Value)
+
+    cout << "After swap (in main):" << endl;
+    cout << "a = " << a << ", b = " << b << endl;
 
     return 0;
 }
