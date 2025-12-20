@@ -5,7 +5,12 @@ using namespace std;
 
 int main()
 {
+	//int score[5];
+	int num = 5;
+	//int score[num]; // ไม่ได้ 
 	int score[5];
+
+
 	int total = 0;
 	double avg = 0.0;
 
